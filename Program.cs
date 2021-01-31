@@ -6,29 +6,39 @@ namespace squaresums
     {
         private static void Main(string[] args)
         {
-           if (squaresum())
+           if (squaresum()) //Calling Squaresum method in the main method for execution.
+                // if the square sum method returns a value of true, the below messages is displayed to user
             {
-                Console.WriteLine("True");
+                Console.WriteLine("Yes, the number can be expressed as a sum of squares of 2 integers");
             }
-            else
+            else // if the square sum method returns a value of False, the below messages is displayed to user
             {
-                Console.WriteLine("False");
+                Console.WriteLine("No, the number cannot be expressed as a sum of squares of 2 integers");
             }
         }
-        static bool squaresum()
+        static bool squaresum() //New method to find the squaresum solution
         {
-            Console.Write("Enter the number:");
-            string c1 = Console.ReadLine();
-            int c = Convert.ToInt32(c1);
-            for (int a = 0; a * a <= c; a++)
+            try
             {
-                for (int b = 0; b * b <= c; b++)
+                Console.Write("Q3 : Enter the number to check if squareSums exist:");//Display message for the user input.
+                string c1 = Console.ReadLine(); // Reading the user Input.
+                int c = Convert.ToInt32(c1); // Convert the string type to integer.
+                for (int a = 0; a * a <= c; a++) // Initializing for loop to iterate upto c to avoid index out of bond exception.
                 {
-                    if (a * a + b * b == c)
-                        return true;
+                    for (int b = 0; b * b <= c; b++) //Initializing for loop to check for the first number in the two numbers
+                    {
+                        if (a * a + b * b == c) // Checking the condition.
+                            return true;
+                    }
                 }
+                return false;
             }
-            return false;
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 }
