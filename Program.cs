@@ -25,7 +25,7 @@ namespace squaresums
                 int c = Convert.ToInt32(c1); // Convert the string type to integer.
                 for (int a = 0; a * a <= c; a++) // Initializing for loop to iterate upto c to avoid index out of bond exception.
                 {
-                    for (int b = 0; b * b <= c; b++) //Initializing for loop to check for the first number in the two numbers
+                    for (int b = 0; b * b <= c; b++) //Initializing for loop to check for the second number out of the two numbers
                     {
                         if (a * a + b * b == c) // Checking the condition.
                             return true;
